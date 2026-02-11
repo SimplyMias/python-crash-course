@@ -1,5 +1,5 @@
 # Day 2 Variables and simple data types
-#What I have learned today is Strings, numbers, comments, naming conventions
+#What I am going to learn today is Strings, numbers, comments, naming conventions
 
 # VARIABLES
 # variables are like container to store some kind of values
