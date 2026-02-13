@@ -73,11 +73,22 @@ print(sum(digit))
 squares = [value ** 2 for value in range(1,11)]
 print(squares)
 
+# WORKING WITH PART OF A LIST
+# you can work with a specific group of items in a list, which python called a slice
 
+# SLICING A LIST
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
 
+print(players[1:4])
+# If we omit the first index, slicing automatically start from index 0
+print(players[:4])
+# If you want all item from third item start from index 2 and skip the second index
+print(players[2:])
+# This syntax allows you to output all the  elements from any point
+# in your list to the end regardless of the length of the list
 
-
-
+# negative index returns an element a certain distance from the end of the list
+print(players[-3:])
 
 
 
