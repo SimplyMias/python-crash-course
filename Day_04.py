@@ -1,5 +1,6 @@
 # Day 4 Working with Lists
 # What I am going to  learn is  Looping through lists, list comprehensions, slices, tuples
+from idlelib.colorizer import prog_group_name_to_tag
 
 # LOOPING THROUGH AN ENTIRE LIST
 # Use loop when you want to run through all entries in a list, performing the same task each time
@@ -126,14 +127,43 @@ print(friends_food)
 
 
 # TUPLES
+# Sometimes you'll want to create a list of items that cannot change, Tuples allow you to do just that
+#Python refers to values that cannot change as immutable, and an immutable list is called a tuple
+print("--------------------------TUPLES------------------------")
+# Defining a Tuple
+# A tuple looks just like a list except you use parentheses instead of square brackets
+# you can access items of tuple using index
+# For example dimensions of a rectangle
+dimensions = (200,50)
+print(dimensions[0])
+# If you want to define a tuple
+# with one element, you need to include a trailing comma
+dim = (2, )
+print(dim)
 
 
+# Looping through all values in a Tuple
+# you can loop over all the values in a tuple using a for loop just as you did with a list
+measurements = (90,45)
+for measure in measurements:
+    print(measure)
 
 
-
-
-
-
+# WRITING OVER A TUPLE
+# Although you can’t modify a tuple, you can assign a new value to a
+# variable that represents a tuple. So if we wanted to change our
+# dimensions, we could redefine the entire tuple
+dimsom = (300,564)
+print("Original Dimensions: ")
+for dimension in dimsom:
+    print(dimension)
+dimsom = (25,90)
+print("\nModified Dimensions: ")
+for dimension in dimsom:
+    print(dimension)
+# When compared with lists, tuples are simple data structures. Use
+# them when you want to store a set of values that should not be changed
+# throughout the life of a program.
 
 
 
