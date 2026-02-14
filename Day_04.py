@@ -90,6 +90,43 @@ print(players[2:])
 # negative index returns an element a certain distance from the end of the list
 print(players[-3:])
 
+# LOOPING THROUGH A SLICE
+# we can use a slice in a for loop if we want to loop through a subset of the elements in a list
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print("Here are the first three players on my team: ")
+for player in players[:3]:
+    print(player)
+
+
+
+
+# COPYING A LIST
+# To copy a list, you can make a slice that includes the entire original
+# list by omitting the first index and the second index ([:])
+
+my_food = ["pizza","falafel","cheesecake"]
+friends_food = my_food[:]
+
+print("My favourite foods are: ")
+print(my_food)
+
+print("\n My friend's favourite food are: ")
+print(friends_food)
+
+my_food.append("Ice Cream")
+friends_food.append("Cannoli")
+
+print("My favourite foods are: ")
+print(my_food)
+
+print("\n My friend's favourite food are: ")
+print(friends_food)
+
+
+
+
+# TUPLES
+
 
 
 
