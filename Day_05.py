@@ -95,18 +95,101 @@ if user not in banned_users:
 
 
 
+# SIMPLE IF STATEMENTS
+# The simplest kind of if statement has one test and one action
+age = 19
+if age >= 18:
+    print("You are old enough to vote")
+
+# if-else STATEMENTS
+# Often, you’ll want to take one action when a conditional test passes and a different action in all other cases.
+age = 9
+if age >= 18:
+    print("You are old enough to vote")
+else:
+    print("You are not old enough to vote")
+
+# THE if-elif-else CHAIN
+# they can be use to test more than two possible situations
+# Only one block is executed in an if-elif-else syntax
+# EXAMPLE
+age = 12
+if age < 4:
+    print("Your admission amount is $0")
+elif age < 18:
+    print("Your admission cost is $25")
+else:
+    print("Your admission cost is $40")
+
+# OMITTING THE else BLOCK
+# Python does not require an else block at the end of an if-elif chain.
+# Sometimes an else block is useful; sometimes it is clearer to use an
+# additional elif statement that catches the specific condition of interest:
+
+# TESTING MULTIPLE CONDITIONS
+requested_toppings = ['mushrooms', 'extra cheese']
+if 'mushrooms' in requested_toppings:
+    print("Adding Mushrooms")
+if 'pepperoni' in requested_toppings:
+    print("Adding pepperoni")
+if 'extra cheese' in requested_toppings:
+    print("Adding extra cheese")
+
+print("\nFinished making your pizza")
+
+# This code would not work properly if we used an if-elif-else block,because the code would stop running after only one test passes.
 
 
 
 
+# USING IF STATEMENTS WITH LISTS
+# You can do some interesting work when you combine lists and if
+# statements. You can watch for special values that need to be treated
+# differently than other values in the list. You can manage changing
+# conditions efficiently
+
+
+# CHECKING FOR SPECIAL ITEMS
+# EXAMPLE 1
+requested_toppings = ['mushrooms', 'green peppers', 'extra cheese']
+for requested_topping in requested_toppings:
+    print(f"Adding {requested_topping}")
+print("\n finished making your pizza")
+
+# EXAMPLE 2 But what if the pizzeria runs out of green peppers? An if statement can solve this problem
+for requested_topping in requested_toppings:
+    if requested_topping == 'green peppers':
+        print("Sorry we are out of green peppers right now")
+    else:
+        print(f"Adding {requested_topping}")
+print("\nFinished making your pizza")
 
 
 
+# CHECKING THAT  A LIST IS NOT EMPTY
+requested_toppings = []
+if requested_toppings:
+    for requested_topping in requested_toppings:
+        print(f"Adding {requested_topping}.")
+    print("\nFinished making your pizza!")
+else:
+    print("Are you sure you want a plain pizza ")
 
 
+print("Multiple list example")
+# USING MULTIPLE LISTS
+available_toppings = ['mushrooms', 'olives', 'green peppers',
+'pepperoni', 'pineapple', 'extra cheese']
+requested_toppings = ['mushrooms', 'french fries', 'extra cheese']
+for requested_topping in requested_toppings:
+    if requested_topping in available_toppings:
+        print(f"Adding {requested_topping}")
+    else:
+        print(f"Sorry we dont have {requested_topping}")
+print("\nFinished making your pizza")
 
 
-
-
-
-
+# # STYLING YOUR IF STATEMENTS
+# for styling conditional tests is to
+# use a single space around comparison operators, such as ==, >=, <=. For
+# example: if age < 4: is better than: if age<4:
