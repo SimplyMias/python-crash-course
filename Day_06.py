@@ -50,5 +50,79 @@ alien_0['color'] = 'yellow'
 print(f"The alien is now {alien_0['color']}")
 
 
+# REMOVING KEY-VALUE PAIRS
+# you can use del statement to completely remove a key-value pair
+# the del need the name of the dictionary and the key that you want to remove
+# let’s remove the key 'points' from the alien_0 dictionary
+# along with its value
+print(alien_0)
+del alien_0['points']
+print(alien_0)
+
+
+
+# # A DICTIONARY OF SIMILAR OBJECTS
+# A dictionary is useful for storing the results
+# of a simple poll, like this: favorite_languages
+favorite_languages = {
+    'jen': 'python',
+    'sarah': 'C',
+    'edward': 'ruby',
+    'phil': 'python',
+}
+language = favorite_languages['sarah'].title()
+print(f"Sarah's favourite language is {language}")
+
+
+# USING get() TO ACCESS VALUES
+#  you can use the get() method
+# to set a default value that will be returned if the requested key doesn’t
+# exist
+student = {
+    "name": "Sam",
+    "age": 20,
+    "course": "CSE"
+}
+
+print(student.get("name"))
+print(student.get("marks"))
+
+
+
+
+# LOOPING THROUGH A DICTIONARY
+# You can loop through all of a
+# dictionary’s key-value pairs, through its keys, or through its values
+
+# LOOPING THROUGH ALL KEY-VALUE PAIRS
+# the following dictionary would store one person's username, first name and last name
+user_0 = {
+    'username' : 'efermi',
+    'first': 'enrico',
+    'last': 'fermi',
+}
+for key, value in user_0.items():
+    print(f"\nKey: {key}")
+    print(f"\nValue: {value}")
+
+
+
+# LOOPING THROUGH ALL THE KEYS IN A DICTIONARY
+# the keys() method is useful when you don't need to work with all of the values in a dictionary
+for name in favorite_languages.keys():
+    print(name)
+
+
+
+
+# You can access the value associated with any key you care about
+# inside the loop by using the current key
+friends = ['phil', 'sarah']
+for name in favorite_languages.keys():
+  print(name.title())
+if name in friends:
+     language = favorite_languages[name].title()
+     print(f"\t{name.title()}, I see you love {language}!")
+
 
 
