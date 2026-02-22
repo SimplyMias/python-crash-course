@@ -89,40 +89,168 @@ print(student.get("marks"))
 
 
 
+#LOOPING THROUGH A DICTIONARY
+# You can loop through all of a dictionary's key-value pairs, through its keys or through its values
 
-# LOOPING THROUGH A DICTIONARY
-# You can loop through all of a
-# dictionary’s key-value pairs, through its keys, or through its values
 
 # LOOPING THROUGH ALL KEY-VALUE PAIRS
-# the following dictionary would store one person's username, first name and last name
+# Consider a new dictionary designed to store info about a user on a website
 user_0 = {
-    'username' : 'efermi',
+    'username': 'efermi',
     'first': 'enrico',
     'last': 'fermi',
 }
-for key, value in user_0.items():
-    print(f"\nKey: {key}")
-    print(f"\nValue: {value}")
+#you could loop through the dictionary using a for loop
+for key,value in user_0.items():
+    print(f"\n Key: {key} ")
+    print(f"\n Value: {value}")
 
+
+# looping through all key value pairs works particularly well for dictionaries  which stores the same kind of info for
+# many different keys
+
+for name,language in favorite_languages.items():
+    print(f"\n{name.title()}'s favourite language is {language.title()}")
 
 
 # LOOPING THROUGH ALL THE KEYS IN A DICTIONARY
 # the keys() method is useful when you don't need to work with all of the values in a dictionary
 for name in favorite_languages.keys():
-    print(name)
+    print(name.title())
 
-
-
-
-# You can access the value associated with any key you care about
-# inside the loop by using the current key
-friends = ['phil', 'sarah']
+friends = ['phil','sarah']
 for name in favorite_languages.keys():
-  print(name.title())
-if name in friends:
-     language = favorite_languages[name].title()
-     print(f"\t{name.title()}, I see you love {language}!")
+    print(name.title())
+    if name in friends:
+        language = favorite_languages[name].title()
+        print(f"\t{name.title()}, I see you love {language}!")
+
+
+# LOOPING THROUGH A DICTIONARY'S KEYS IN  A PARTICULAR ORDER
+#looping through a dictionary returns the items in the same order they were inserted
+#sometimes though you'll want to loop through a dictionary in a different order
+# One way to do this is to sort the keys as they're returned in the for loop
+for name in sorted(favorite_languages.keys()):
+    print(f"{name.title()} thank you for taking thee poll")
+
+
+
+# LOOPING THROUGH ALL VALUES IN A DICTIONARY
+#If you are primarily interested in the values that a dictionary contains you can use the values() method to
+# return a list of values without any keys
+print("The following languages have been mentioned: ")
+for language in favorite_languages.values():
+    print(language.title())
+
+# To see each language chosen without
+# repetition, we can use a set.
+# A set is a collection in which each item must be unique
+for language in set(favorite_languages.values()):
+    print(language.title())
+# When you wrap set() around a lis that contains duplicate items, Python identifies the unique items in the
+# list and builds a set from those items
+
+
+
+# You can build a set directly using braces and separating the elements with commas
+languages = {'python', 'ruby', 'python', 'C'}
+print(languages)
+# You can build a set directly using braces and separating the elements with braces.
+# When you see braces but no key-value pairs, you’re probably looking at a set.
+# Unlike lists and dictionaries, sets do not retain items in any specific order
+
+
+
+
+
+# NESTING
+# Sometimes you’ll want to store multiple dictionaries in a list, or a list of items as a value in a dictionary. This is called nesting
+# we can nest dictionaries inside a list
+# we can nest list of items in a dictionary
+# we can nest dictionary inside another dictionary
+
+
+# A LIST OF DICTIONARIES
+# EXAMPLE
+alien_0 = {'color': 'blue', 'points': 5,}
+alien_1 = {'color': 'green', 'points': 10,}
+alien_2 = {'color': 'red', 'points': 5,}
+aliens = [alien_0,alien_1,alien_2]
+for alien in aliens:
+    print(alien)
+
+# A more realistic example would involve more than three aliens with
+# code that automatically generates each alien
+aliens = []
+for alien_numbers in range(30):
+    new_alien = {'color': 'red', 'points': 5, 'speed': 'slow',}
+    aliens.append(new_alien)
+for alien in aliens[:3]:
+    if alien['color'] == 'red':
+       alien['color'] = 'yellow'
+       alien['speed'] = 'medium'
+       alien['points'] = 10
+    elif alien['color'] == 'yellow':
+        alien['color'] = 'red'
+        alien['speed'] = 'fast'
+        alien['points'] = 15
+# to see first 5 aliens
+for alien in aliens[:5]:
+    print(alien)
+print(f"Total number of aliens : {len(aliens)}")
+
+#  A LIST IN A DICTIONARY
+# Rather than putting a dictionary inside a list, it’s sometimes useful to put
+# a list inside a dictionary
+# Store information about a pizza being ordered.
+pizza = {
+'crust': 'thick',
+'toppings': ['mushrooms', 'extra cheese'],
+}
+# Summarize the order.
+print(f"You ordered a {pizza['crust']}-crust pizza "
+"with the following toppings:")
+for topping in pizza['toppings']:
+   print("\t" + topping)
+
+
+
+favorite_languages = {
+'jen': ['python', 'ruby'],
+'sarah': ['c'],
+'edward': ['ruby', 'go'],
+'phil': ['python', 'haskell'],
+}
+for name, languages in favorite_languages.items():
+   print(f"\n{name.title()}'s favorite languages are:")
+for language in languages:
+   print(f"\t{language.title()}")
+
+
+
+
+
+# A DICTIONARY IN A DICTIONARY
+users = {
+'aeinstein': {
+'first': 'albert',
+'last': 'einstein',
+'location': 'princeton',
+},
+'mcurie': {
+'first': 'marie',
+'last': 'curie',
+'location': 'paris',
+},
+}
+for username, user_info in users.items():
+  print(f"\nUsername: {username}")
+  full_name = f"{user_info['first']} {user_info['last']}"
+location = user_info['location']
+print(f"\tFull name: {full_name.title()}")
+print(f"\tLocation: {location.title()}")
+
+
 
 
 
