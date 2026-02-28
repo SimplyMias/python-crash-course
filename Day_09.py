@@ -7,16 +7,16 @@
 
 # DEFINING A FUNCTION
 # Here’s a simple function named greet_user() that prints a greeting:
-# def greet_user():
-#     print("Heya")
-# greet_user()
+def greet_user():
+    print("Heya")
+greet_user()
 
 # PASSING INFORMATION TO A FUNCTION
 # Modified slightly, the function greet_user() can not only tell the user
 # Hello! but also greet them by name.
-# def greet_user(username):
-#     print(f"Hello {username}")
-# greet_user("Saim")
+def greet_user(username):
+    print(f"Hello {username}")
+greet_user("Saim")
 
 # ARGUMENTS AND PARAMETERS
 # In the preceding greet_user() function, we defined greet_user() to require
@@ -44,10 +44,10 @@
 # . The simplest
 # way to do this is based on the order of the arguments provided. Values
 # matched up this way are called positional arguments.
-# def describe_pet(animal_type,pet_name):
-#     print(f"\nI have {animal_type}")
-#     print(f"\nMy {animal_type}'s name is {pet_name.title()}")
-# describe_pet('hamster','hary')
+def describe_pet(animal_type,pet_name):
+    print(f"\nI have {animal_type}")
+    print(f"\nMy {animal_type}'s name is {pet_name.title()}")
+describe_pet('hamster','hary')
 
 
 # MULTIPLE FUNCTION CALLS
@@ -171,18 +171,80 @@ describe_pet('harry', 'hamster')
 # value the function returns is called a return value.
 
 
+# RETURNING A SIMPLE VALUE
+def get_formatted_name(first_name, last_name):
+    full_name = f"{first_name} {last_name}"
+    return full_name.title()
+user = get_formatted_name("saim","kazmi")
+print(user)
 
 
+# RETURNING A DICTIONARY
+# example, the
+# following function takes in parts of a name and returns a dictionary
+# representing a person
+def build_person(first_name,last_name,age = None):
+    person = {'first':first_name,'last':last_name }
+    if age:
+        person['age']= age
+    return person
+
+full_name = build_person('Saim','Kazmi', 21)
+
+print(full_name)
 
 
+# USING A FUNCTION WITH A WHILE LOOP
+
+def get_formatted_name(first_name, last_name):
+    full_name = f"{first_name} {last_name}"
+    return full_name.title()
+while True:
+    print("\n Please tell me your name: ")
+    print("\nEnter q at any to time to quit")
+    f_name = input("Enter Your First Name: ")
+    l_name = input("Enter your Last Name:")
+    formatted_name = get_formatted_name(f_name,l_name)
+    print(f"Hello {formatted_name}")
+    if f_name == 'q':
+        break
+
+    if l_name == 'q':
+        break
+
+# PASSING A LIST
+def greet_users(names):
+    for name in names:
+        msg = f"Hello {name}"
+        print(msg)
 
 
+username = ["Saim","Imaad","Musheer"]
+greet_users(username)
 
+# MODIFYING A LIST IN A FUNCTION
+# Start with some designs that need to be printed.
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
 
+def print_models():
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print(f"Printing model: {current_design}")
+        completed_models.append(current_design)
 
+def show_models():
+    print("\nThe following models have been printed:")
+    for completed_model in completed_models:
+        print(completed_model)
 
+print_models()
+show_models()
 
-
-
-
-
+# PREVENTING A FUNCTION FROM MODIFYING A LIST
+# Even though you can preserve the contents of a list by passing a copy
+# of it to your functions, you should pass the original list to functions
+# unless you have a specific reason to pass a copy. It’s more efficient for a
+# function to work with an existing list to avoid using the time and
+# memory needed to make a separate copy, especially when you’re
+# working with large lists.
